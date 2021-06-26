@@ -528,7 +528,7 @@ void fromMsg(const geometry_msgs::msg::PoseStamped& msg, tf2::Stamped<Eigen::Iso
 
 } // namespace
 
-
+#ifndef _MSC_VER
 namespace Eigen {
 // This is needed to make the usage of the following conversion functions usable in tf2::convert().
 // According to clangs error note 'fromMsg'/'toMsg' should be declared prior to the call site or
@@ -584,5 +584,6 @@ void fromMsg(const geometry_msgs::msg::Twist &msg, Eigen::Matrix<double,6,1>& ou
 }
 
 } // namespace
+#endif
 
 #endif // TF2_EIGEN_H
